@@ -1,27 +1,27 @@
 import { Duration } from "./duration.js";
 
 describe("Duration", () => {
-  test("the constructor should take a duration in milliseconds and set the property ms", () => {
+  test.skip("the constructor should take a duration in milliseconds and set the property ms", () => {
     expect(new Duration(444).ms).toBe(444);
   });
 
-  test("the toString method should return the number of milliseconds followed by ms", () => {
+  test.skip("the toString method should return the number of milliseconds followed by ms", () => {
     expect(new Duration(123).toString()).toBe("123 ms");
   });
 
-  test("there should be a getter called minutes that returns the duration as number of minutes (rounded)", () => {
+  test.skip("there should be a getter called minutes that returns the duration as number of minutes (rounded)", () => {
     expect(new Duration(10000).minutes).toBe(0);
     expect(new Duration(60000).minutes).toBe(1);
     expect(new Duration(120000).minutes).toBe(2);
     expect(new Duration(3600000).minutes).toBe(60);
   });
 
-  test("the fromDays static function, should take in the number of days and return a Duration with the converted millisecond value", () => {
+  test.skip("the fromDays static function, should take in the number of days and return a Duration with the converted millisecond value", () => {
     expect(Duration.fromDays(13).ms).toBe(1123200000);
     expect(Duration.fromDays(388).ms).toBe(33523200000);
   });
 
-  test(`Advanced: the constructor can take either the number of milliseconds or a an object with the form {
+  test.skip(`Advanced: the constructor can take either the number of milliseconds or a an object with the form {
     y: 1, // 1 year
     d: 23, // 23 days
     h: 4, // 4 hours
