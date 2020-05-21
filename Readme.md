@@ -1,0 +1,1 @@
+# Javascript Prototype Exercise
