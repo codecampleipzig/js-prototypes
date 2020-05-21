@@ -1,0 +1,17 @@
+{
+  "name": "js-prototypes",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Gabriel Heinrich <gabriel@codecampleipzig.de>",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^26.0.1"
+  },
+  "dependencies": {
+    "@babel/preset-env": "^7.9.6",
+    "babel-jest": "^26.0.1"
+  }
+}
