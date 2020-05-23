@@ -40,4 +40,25 @@ describe("Duration", () => {
       new Duration({ y: 3, d: 45, h: 12, min: 55, s: 67, ms: 33 }).ms
     ).toBe(98542567033);
   });
+
+  test.skip("Advanced: it should have a method .humanize(), that rounds the duration to the most appropriate unit and gives it back as a human readable string. For simplicity we'll always round down. Check the test cases for details", () => {
+    expect(new Duration(1).humanize()).toBe("1 millisecond");
+    expect(new Duration(2).humanize()).toBe("2 milliseconds");
+    expect(new Duration(123).humanize()).toBe("123 milliseconds");
+    expect(new Duration(1000).humanize()).toBe("1 second");
+    expect(new Duration(1499).humanize()).toBe("1 second");
+    expect(new Duration(1500).humanize()).toBe("1 second");
+    expect(new Duration(1999).humanize()).toBe("1 second");
+    expect(new Duration(2000).humanize()).toBe("2 seconds");
+    expect(new Duration(33111).humanize()).toBe("33 seconds");
+    expect(new Duration(60000).humanize()).toBe("1 minute");
+    expect(new Duration(120000).humanize()).toBe("2 minutes");
+    expect(new Duration(3600000).humanize()).toBe("1 hour");
+    expect(new Duration(23 * 3600000).humanize()).toBe("23 hours");
+    expect(new Duration(24 * 3600000).humanize()).toBe("1 day");
+    expect(new Duration(123 * 24 * 3600000).humanize()).toBe("123 days");
+    expect(new Duration(364 * 24 * 3600000).humanize()).toBe("364 days");
+    expect(new Duration(365 * 24 * 3600000).humanize()).toBe("1 year");
+    expect(new Duration(2 * 365 * 24 * 3600000).humanize()).toBe("2 years");
+  });
 });
