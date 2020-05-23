@@ -28,4 +28,24 @@ export class Duration {
   static fromDays(days) {
     return new Duration(days * 24 * 60 * 60 * 1000);
   }
+
+  humanize() {
+    const units = [
+      { threshold: 1000, name: "millisecond" },
+      { threshold: 60, name: "second" },
+      { threshold: 60, name: "minute" },
+      { threshold: 24, name: "hour" },
+      { threshold: 365, name: "day" },
+      { threshold: Infinity, name: "year" }
+    ];
+
+    let count = this.ms;
+    for (const { threshold, name } of units) {
+      if (count < threshold) {
+        return `${count} ${name}${count > 1 ? "s" : ""}`;
+      }
+
+      count = Math.floor(count / threshold);
+    }
+  }
 }
