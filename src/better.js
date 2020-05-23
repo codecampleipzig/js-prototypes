@@ -1,4 +1,5 @@
 // Improve some javascript methods
+// This is called monkey patching and is considered bad style. We'll still do it here as an exercise
 
 // The array toString method, prints out a comma separated list of the elements of the array. However without any space after the comma.
 
